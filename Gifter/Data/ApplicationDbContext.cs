@@ -10,5 +10,6 @@ namespace Gifter.Data
         //These are specific to our project. We pass in the model classes
         public DbSet<UserProfile> UserProfile { get; set; }
         public DbSet<Post> Post { get; set; }
+        public DbSet<Comment> Comment { get; set; }
     }
 }

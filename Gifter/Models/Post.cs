@@ -7,7 +7,8 @@ namespace Gifter.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Hmmm...Looks like your forgot to add a title...")]
+        [StringLength(255, MinimumLength = 1)]
         public string Title { get; set; }
 
         [Required]
@@ -16,6 +17,7 @@ namespace Gifter.Models
         public string Caption { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         public DateTime DateCreated { get; set; }
 
         [Required]
