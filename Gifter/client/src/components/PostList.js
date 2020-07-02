@@ -8,6 +8,13 @@ const PostList = () => {
         getAllPosts();
     }, []);
 
+    // useEffect(
+    //     () => {
+
+    //     },
+    //     [posts]
+    // )
+
     return (
         <div>
             {posts.map((post) => (
