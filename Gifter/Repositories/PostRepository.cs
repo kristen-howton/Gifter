@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Gifter.Data;
 using Gifter.Models;
+using Microsoft.VisualBasic;
 
 namespace Gifter.Repositories
 {
@@ -48,6 +49,7 @@ namespace Gifter.Repositories
         }
         public void Add(Post post)
         {
+            post.DateCreated = DateAndTime.Now;
             _context.Add(post);
             _context.SaveChanges();
         }
