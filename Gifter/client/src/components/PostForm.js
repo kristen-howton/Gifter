@@ -18,19 +18,16 @@ export default props => {
     const image = useRef()
     const userProfile = useRef()
     const caption = useRef()
-    // const date = useRef()
+
 
     const constructNewPost = () => {
         const UserProfileId = parseInt(userProfile.current.value)
 
-        // const userId = parseInt(localStorage.getItem("kennel_customer"))
-        // create a new animal object  
-        // Make sure that the animal object has the customerId and locationId foreign keys on it.
+
         const newPostObj = {
             Title: title.current.value,
             ImageUrl: image.current.value,
             Caption: caption.current.value,
-            // DateCreated: newDate(),
             UserProfileId: UserProfileId
         }
         console.log(newPostObj)
@@ -106,7 +103,7 @@ export default props => {
                 onClick={
                     evt => {
                         evt.preventDefault() // Prevent browser from submitting the form
-                        // create the animal function goes here
+                        // create the post function goes here
                         constructNewPost()
                     }
                 }
