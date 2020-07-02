@@ -149,3 +149,6 @@ C:\Users\Jon\workspace\csharp\exercises\Gifter\Gifter\obj\Debug\netcoreapp3.1\st
 C:\Users\Jon\workspace\csharp\exercises\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.dll
 C:\Users\Jon\workspace\csharp\exercises\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.pdb
 C:\Users\Jon\workspace\csharp\exercises\Gifter\Gifter\obj\Debug\netcoreapp3.1\Gifter.genruntimeconfig.cache
+C:\Users\Jon\workspace\csharp\exercises\Gifter\Gifter\bin\Debug\netcoreapp3.1\client\package-lock.json
+C:\Users\Jon\workspace\csharp\exercises\Gifter\Gifter\bin\Debug\netcoreapp3.1\client\package.json
+C:\Users\Jon\workspace\csharp\exercises\Gifter\Gifter\bin\Debug\netcoreapp3.1\client\public\manifest.json
