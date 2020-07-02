@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Gifter.Models
@@ -13,7 +14,6 @@ namespace Gifter.Models
 
         [Required]
         public string ImageUrl { get; set; }
-
         public string Caption { get; set; }
 
         [Required]
@@ -22,7 +22,7 @@ namespace Gifter.Models
 
         [Required]
         public int UserProfileId { get; set; }
-
         public UserProfile UserProfile { get; set; }
+        public List<Comment> Comment { get; set; }
     }
 }
