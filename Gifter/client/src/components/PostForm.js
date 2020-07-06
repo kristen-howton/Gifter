@@ -1,12 +1,14 @@
 import React, { useContext, useRef, useEffect } from "react"
 import { PostContext } from "../providers/PostProvider"
 import { UserProfileContext } from "../providers/UserProfileProvider"
-import { Button, Modal, ModalBody, ModalHeader, FormGroup } from "reactstrap"
+import { FormGroup } from "reactstrap"
+import { useHistory } from "react-router-dom";
 
 export default props => {
 
     const { addPost } = useContext(PostContext)
     const { userProfiles, getAllUserProfiles } = useContext(UserProfileContext)
+    const history = useHistory();
 
     useEffect(() => {
         getAllUserProfiles();
@@ -32,8 +34,13 @@ export default props => {
         }
         console.log(newPostObj)
         // and save it to the API.
-        addPost(newPostObj).then(props.toggler)
-    }
+        addPost(newPostObj)
+            .then(props.toggler)
+            .then((p) => {
+                // Navigate the user back to the home route
+                history.push("/")
+            });
+    };
 
     return (
         <FormGroup className="PostForm">
