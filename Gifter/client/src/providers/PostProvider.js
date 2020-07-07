@@ -11,6 +11,10 @@ export const PostProvider = (props) => {
             .then(setPosts);
     };
 
+    const getPost = (id) => {
+        return fetch(`/api/post/${id}`).then((res) => res.json());
+    };
+
     const addPost = (post) => {
         return fetch("/api/post", {
             method: "POST",
@@ -21,8 +25,28 @@ export const PostProvider = (props) => {
         }).then(getAllPosts);
     };
 
+    const getAllUserPosts = userProfileId => {
+        return fetch(`/api/post/getbyuser/${userProfileId}`)
+            .then((res) => res.json())
+    };
+
+    // const deletePost = postId => {
+    //     return fetch(`/api/post${postId}`, {
+    //         method: "DELETE"
+    //     })
+    //         .then(getAllPosts)
+    // }
+
+
+
+    const searchPosts = searchTerms => {
+        return fetch(`/api/post/search?q=${searchTerms}&sortDesc=true`)
+            .then((res) => res.json())
+            .then(setPosts)
+    }
+
     return (
-        <PostContext.Provider value={{ posts, getAllPosts, addPost }}>
+        <PostContext.Provider value={{ posts, getAllPosts, addPost, getAllUserPosts, getPost, searchPosts }}>
             {props.children}
         </PostContext.Provider>
     );

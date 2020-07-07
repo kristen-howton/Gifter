@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { PostContext } from "../providers/PostProvider";
+import PostSearch from "./PostSearch";
 
 const PostList = () => {
     const { posts, getAllPosts } = useContext(PostContext);
@@ -10,6 +11,7 @@ const PostList = () => {
 
     return (
         <div>
+            <PostSearch />
             {posts.map((post) => (
                 <div key={post.id}>
                     <img src={post.imageUrl} alt={post.title} />
