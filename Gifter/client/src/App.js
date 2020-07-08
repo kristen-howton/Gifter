@@ -1,25 +1,4 @@
-// import React from "react";
-// import "./App.css";
-// import { PostProvider } from "./providers/PostProvider";
-// import PostList from "./components/PostList";
-// import PostForm from "./components/PostForm";
-// import { UserProfileProvider } from "./providers/UserProfileProvider";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <PostProvider>
-//         <UserProfileProvider>
-//           <PostForm />
-//           <PostList />
-//         </UserProfileProvider>
-//       </PostProvider>
-
-//     </div>
-//   );
-// }
-
-// export default App;
 
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -33,12 +12,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <PostProvider>
-          <UserProfileProvider>
+        <UserProfileProvider>
+          <PostProvider>
             <Header />
             <ApplicationViews />
-          </UserProfileProvider>
-        </PostProvider>
+          </PostProvider>
+        </UserProfileProvider>
       </Router>
     </div>
   );

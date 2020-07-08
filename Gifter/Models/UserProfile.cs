@@ -12,6 +12,10 @@ namespace Gifter.Models
         public string Name { get; set; }
 
         [Required]
+        [StringLength(28, MinimumLength = 28)]
+        public string FirebaseUserId { get; set; }
+
+        [Required]
         [EmailAddress]
         [StringLength(255, MinimumLength = 5)]
         public string Email { get; set; }
@@ -23,6 +27,11 @@ namespace Gifter.Models
         [Required]
         [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         public DateTime DateCreated { get; set; }
+
+        [Required]
+        public int UserTypeId { get; set; }
+
+        public UserType UserType { get; set; }
 
     }
 }
