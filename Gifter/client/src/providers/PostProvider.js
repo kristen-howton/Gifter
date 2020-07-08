@@ -35,14 +35,16 @@ export const PostProvider = (props) => {
                 throw new Error("Unauthorized");
             }));
 
-    const getPost = (id) =>
+    const getPost = (id) => {
         getToken().then((token) =>
-            fetch(`apiUrl/${id}`, {
+            fetch(`/api/post/${id}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
-            }).then(resp => resp.json()));
+            }))
+            .then((res) => res.json())
+    }
 
     const getAllUserPosts = (userProfileId) =>
         getToken().then((token) =>
@@ -53,15 +55,17 @@ export const PostProvider = (props) => {
                 }
             }).then(resp => resp.json()));
 
-    const searchPosts = (searchTerms) =>
+    const searchPosts = (searchTerm) => {
         getToken().then((token) =>
-            fetch(`apiUrl/search?q=${searchTerms}&sortDesc=true`, {
+            fetch(`api/post/search?q=${searchTerm}`, {
                 method: "GET",
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
-            }).then(resp => resp.json())
+            })
+                .then((res) => res.json())
                 .then(setPosts));
+    };
 
 
 
