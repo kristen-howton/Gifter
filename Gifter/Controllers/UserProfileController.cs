@@ -68,7 +68,4 @@ namespace Gifter.Controllers
         }
     }
 
-
-
-
 }
