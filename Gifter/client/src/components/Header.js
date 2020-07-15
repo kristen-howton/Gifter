@@ -45,13 +45,7 @@ export default function Header() {
                             </>
                         }
                     </Nav>
-                    <Nav navbar>
-                        <NavItem>
-                            <a aria-current="page" className="nav-link"
-                                href="https://www.youtube.com/watch?v=3N_ywhx6_K0"
-                                target="_new">Grace Hopper on Letterman</a>
-                        </NavItem>
-                    </Nav>
+
                 </Collapse>
             </Navbar>
         </div>

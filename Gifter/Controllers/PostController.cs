@@ -3,6 +3,7 @@ using Gifter.Data;
 using Gifter.Repositories;
 using Gifter.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Gifter.Controllers
 {
@@ -12,11 +13,13 @@ namespace Gifter.Controllers
     public class PostController : ControllerBase
     {
         private readonly PostRepository _postRepository;
+        private readonly UserProfileRepository _userProfileRepository;
 
         //using context instead of config
         public PostController(ApplicationDbContext context)
         {
             _postRepository = new PostRepository(context);
+            _userProfileRepository = new UserProfileRepository(context);
         }
 
         [HttpGet]
@@ -82,6 +85,11 @@ namespace Gifter.Controllers
         {
             _postRepository.Delete(id);
             return NoContent();
+        }
+        private UserProfile GetCurrentUserProfile()
+        {
+            var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            return _userProfileRepository.GetByFirebaseUserId(firebaseUserId);
         }
     }
 }
